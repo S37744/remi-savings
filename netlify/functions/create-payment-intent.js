@@ -1,15 +1,22 @@
-const Stripe = require('stripe')
+import Stripe from 'stripe'
 
-exports.handler = async (event) => {
+export const handler = async (event) => {
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: 'Method Not Allowed' }
   }
 
-  const stripe = Stripe(process.env.STRIPE_SECRET_KEY)
+  if (!process.env.STRIPE_SECRET_KEY) {
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: 'Stripe secret key not configured' }),
+    }
+  }
+
+  const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
 
   try {
     const paymentIntent = await stripe.paymentIntents.create({
-      amount: 499, // $4.99 in cents
+      amount: 499,
       currency: 'usd',
       automatic_payment_methods: { enabled: true },
     })
@@ -22,6 +29,7 @@ exports.handler = async (event) => {
   } catch (error) {
     return {
       statusCode: 500,
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ error: error.message }),
     }
   }
