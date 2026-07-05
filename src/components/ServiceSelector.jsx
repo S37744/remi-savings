@@ -6,10 +6,10 @@ const SERVICE_GROUPS = [
   { name: 'Disney+', ids: ['disney-ads', 'disney-premium'] },
   { name: 'Max', ids: ['max-ads', 'max-ad-free', 'max-ultimate'] },
   { name: 'Apple TV+', ids: ['apple-tv'] },
-  { name: 'Peacock', ids: ['peacock-ads', 'peacock-premium'] },
+  { name: 'Peacock', ids: ['peacock-select', 'peacock-ads', 'peacock-premium'] },
   { name: 'Paramount+', ids: ['paramount-ads', 'paramount-premium'] },
-  { name: 'ESPN+', ids: ['espn-plus'] },
-  { name: 'Prime Video', ids: ['amazon-prime-video'] },
+  { name: 'ESPN', ids: ['espn'] },
+  { name: 'Prime Video', ids: ['amazon-prime-video', 'amazon-prime-video-adfree'] },
   { name: 'YouTube Premium', ids: ['youtube-premium'] },
   { name: 'Discovery+', ids: ['discovery-ads', 'discovery-premium'] },
 ]
@@ -23,8 +23,8 @@ export default function ServiceSelector({ selected, onToggle }) {
       <div className="service-groups">
         {SERVICE_GROUPS.map(group => {
           const services = group.ids.map(id => SERVICES.find(s => s.id === id)).filter(Boolean)
-          const activeInGroup = services.filter(s => selected.includes(s.id))
-          const isGroupActive = activeInGroup.length > 0
+          if (services.length === 0) return null
+          const isGroupActive = services.some(s => selected.includes(s.id))
 
           return (
             <div key={group.name} className={`service-group ${isGroupActive ? 'active' : ''}`}>
