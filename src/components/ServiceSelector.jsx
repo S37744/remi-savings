@@ -40,7 +40,6 @@ export default function ServiceSelector({ selected, onToggle }) {
                       key={service.id}
                       className={`tier-btn ${isSelected ? 'selected' : ''}`}
                       onClick={() => onToggle(service.id)}
-                      style={isSelected ? { borderColor: service.color, backgroundColor: service.color + '22' } : {}}
                     >
                       <span className="tier-name">{service.tier || 'Standard'}</span>
                       <span className="tier-price">${service.price.toFixed(2)}/mo</span>
