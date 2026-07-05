@@ -163,7 +163,7 @@ body {
   position: relative;
 }
 .tier-btn:hover { color: var(--text); border-color: #444; }
-.tier-btn.selected { color: #000; border-color: var(--orange); background: var(--orange); font-weight: 600; }
+.tier-btn.selected { color: #fff; border-color: var(--red); background: var(--red); font-weight: 600; }
 .tier-name { flex: 1; }
 .tier-price { font-size: 12px; }
 .tier-check {
@@ -172,7 +172,7 @@ body {
   top: 50%;
   transform: translateY(-50%);
   font-size: 12px;
-  color: #000;
+  color: #fff;
 }
 
 /* ANALYZE BAR */
