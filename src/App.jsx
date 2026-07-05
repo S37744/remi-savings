@@ -88,8 +88,8 @@ export default function App() {
                   Payment confirmed! Re-select your services to see your report.
                 </div>
               )}
-              <div className="hero-eyebrow">honest question —</div>
-              <h1>do you actually know what you're paying for streaming?</h1>
+              <div className="hero-eyebrow">Honest question —</div>
+              <h1>Do You Actually Know What You're Paying for Streaming?</h1>
               <p>I built this after realizing I was paying <strong>$94/month</strong> across 6 services and watching maybe 2 of them. Pick yours below.</p>
             </div>
 
@@ -100,7 +100,7 @@ export default function App() {
                 <div className="analyze-bar-inner">
                   <span className="analyze-count">{selected.length} service{selected.length !== 1 ? 's' : ''} selected</span>
                   <button className="btn-primary" onClick={handleAnalyze}>
-                    {paid ? 'Show my savings →' : 'Check my bill →'}
+                    {paid ? 'Show My Savings →' : 'Check My Bill →'}
                   </button>
                 </div>
               </div>
@@ -109,8 +109,8 @@ export default function App() {
         ) : (
           <>
             <div className="results-header">
-              <button className="btn-back" onClick={handleReset}>← start over</button>
-              <h2>here's what you're actually paying</h2>
+              <button className="btn-back" onClick={handleReset}>← Start Over</button>
+              <h2>Here's What You're Actually Paying</h2>
             </div>
 
             <CostSummary selected={selected} />
@@ -131,7 +131,7 @@ export default function App() {
       </main>
 
       <footer className="footer">
-        <p>built by a real person who was tired of overpaying &nbsp;·&nbsp; prices last verified {LAST_UPDATED}</p>
+        <p>Built by a real person who was tired of overpaying &nbsp;·&nbsp; Prices last verified {LAST_UPDATED}</p>
         <p>© 2025 Remi Savings</p>
       </footer>
     </div>

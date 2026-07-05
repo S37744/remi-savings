@@ -84,9 +84,9 @@ function CheckoutForm({ onSuccess }) {
       <PaymentElement />
       {error && <div className="checkout-error">{error}</div>}
       <button className="btn-pay" type="submit" disabled={!stripe || loading}>
-        {loading ? 'processing...' : 'unlock my savings — $4.99'}
+        {loading ? 'Processing...' : 'Unlock My Savings — $4.99'}
       </button>
-      <p className="paywall-guarantee">one-time · 30-day money back if it's not worth it</p>
+      <p className="paywall-guarantee">One-time payment · Instant access</p>
     </form>
   )
 }
@@ -128,24 +128,24 @@ export default function Paywall({ onPaySuccess }) {
         {!showForm ? (
           <>
             <div className="paywall-lock">🔒</div>
-            <h3>want to see how to fix it?</h3>
+            <h3>Want to See How to Fix It?</h3>
             <p>For $4.99 I'll show you the exact bundle deals you're missing and how much you'd save every single month. Most people save $20–40/month — that's $480 a year.</p>
             <ul className="paywall-features">
-              <li>✓ bundle deals you're missing</li>
-              <li>✓ which tiers are a waste of money</li>
-              <li>✓ how much you save per year</li>
-              <li>✓ what to actually keep vs cancel</li>
+              <li>✓ Bundle deals you're missing</li>
+              <li>✓ Which tiers are a waste of money</li>
+              <li>✓ How much you save per year</li>
+              <li>✓ What to actually keep vs cancel</li>
             </ul>
             {fetchError && <div className="checkout-error">{fetchError}</div>}
             <button className="btn-pay" onClick={handleUnlock}>
-              show me how to save — $4.99
+              Show Me How to Save — $4.99
             </button>
-            <p className="paywall-guarantee">one-time · 30-day money back if it's not worth it</p>
+            <p className="paywall-guarantee">One-time payment · Instant access</p>
           </>
         ) : (
           <>
-            <h3>enter your payment details</h3>
-            <p className="paywall-sub">secure payment · $4.99 one-time</p>
+            <h3>Enter Your Payment Details</h3>
+            <p className="paywall-sub">Secure Payment · $4.99 One-Time</p>
             {clientSecret ? (
               <Elements stripe={stripePromise} options={{ clientSecret, appearance }}>
                 <CheckoutForm onSuccess={onPaySuccess} />

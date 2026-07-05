@@ -12,28 +12,28 @@ export default function CostSummary({ selected }) {
     <section className="cost-summary">
       <div className="cost-cards">
         <div className="cost-card cost-card-main">
-          <div className="cost-label">you're paying</div>
+          <div className="cost-label">You're Paying</div>
           <div className="cost-amount">${monthly.toFixed(2)}</div>
-          <div className="cost-sublabel">every month</div>
+          <div className="cost-sublabel">Every Month</div>
         </div>
         <div className="cost-card">
-          <div className="cost-label">that's</div>
+          <div className="cost-label">That's</div>
           <div className="cost-amount cost-amount-sm">${yearly.toFixed(2)}</div>
-          <div className="cost-sublabel">per year on streaming</div>
+          <div className="cost-sublabel">Per Year on Streaming</div>
         </div>
         <div className={`cost-card ${overpaying > 0 ? 'cost-card-warning' : 'cost-card-good'}`}>
-          <div className="cost-label">vs. the average person</div>
+          <div className="cost-label">vs. The Average Person</div>
           <div className="cost-amount cost-amount-sm">
             {overpaying > 0 ? `$${overpaying.toFixed(2)} more` : `$${Math.abs(monthly - avgMonthly).toFixed(2)} less`}
           </div>
           <div className="cost-sublabel">
-            {overpaying > 0 ? 'the average is $61/mo' : 'nice — average is $61/mo'}
+            {overpaying > 0 ? 'The average is $61/mo' : 'Nice — average is $61/mo'}
           </div>
         </div>
       </div>
 
       <div className="service-breakdown">
-        <h3>here's the breakdown</h3>
+        <h3>Here's the Breakdown</h3>
         <div className="breakdown-list">
           {selectedServices.map(service => (
             <div key={service.id} className="breakdown-item">
