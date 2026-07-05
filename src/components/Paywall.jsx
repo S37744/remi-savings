@@ -162,7 +162,7 @@ export default function Paywall({ onPaySuccess }) {
             <h3>Enter Your Payment Details</h3>
             <p className="paywall-sub">Secure Payment · $4.99 One-Time</p>
             {clientSecret ? (
-              <Elements stripe={stripePromise} options={{ clientSecret, appearance }}>
+              <Elements stripe={stripePromise} options={{ clientSecret, appearance, layout: { type: 'accordion', defaultCollapsed: false } }}>
                 <CheckoutForm onSuccess={onPaySuccess} />
               </Elements>
             ) : (

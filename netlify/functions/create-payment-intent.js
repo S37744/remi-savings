@@ -18,7 +18,7 @@ export const handler = async (event) => {
     const paymentIntent = await stripe.paymentIntents.create({
       amount: 499,
       currency: 'usd',
-      payment_method_types: ['card'],
+      automatic_payment_methods: { enabled: true },
     })
 
     return {
