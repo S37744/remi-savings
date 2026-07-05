@@ -99,9 +99,9 @@ function CheckoutForm({ onSuccess }) {
       <PaymentElement />
       {error && <div className="checkout-error">{error}</div>}
       <button className="btn-pay" type="submit" disabled={!stripe || loading}>
-        {loading ? 'Processing...' : 'Unlock My Savings — $4.99'}
+        {loading ? 'Processing Payment...' : 'Unlock My Savings — $4.99'}
       </button>
-      <p className="paywall-guarantee">One-time payment · Instant access</p>
+      <p className="paywall-guarantee">One-Time Payment · Instant Access</p>
     </form>
   )
 }
@@ -130,7 +130,7 @@ export default function Paywall({ onPaySuccess }) {
   return (
     <div className="paywall">
       <div className="paywall-preview">
-        <div className="paywall-blur-label">your savings breakdown</div>
+        <div className="paywall-blur-label">Your Savings Breakdown</div>
         <div className="paywall-blur-rows">
           <div className="blur-row" />
           <div className="blur-row blur-row-short" />
@@ -144,7 +144,7 @@ export default function Paywall({ onPaySuccess }) {
           <>
             <div className="paywall-lock">🔒</div>
             <h3>Want to See How to Fix It?</h3>
-            <p>For $4.99 I'll show you the exact bundle deals you're missing and how much you'd save every single month. Most people save $20–40/month — that's $480 a year.</p>
+            <p>For $4.99 I'll Show You the Exact Bundle Deals You're Missing and How Much You'd Save Every Single Month. Most People Save $20–40/Month — That's $480 a Year.</p>
             <ul className="paywall-features">
               <li>✓ Bundle deals you're missing</li>
               <li>✓ Which tiers are a waste of money</li>
@@ -155,7 +155,7 @@ export default function Paywall({ onPaySuccess }) {
             <button className="btn-pay" onClick={handleUnlock}>
               Show Me How to Save — $4.99
             </button>
-            <p className="paywall-guarantee">One-time payment · Instant access</p>
+            <p className="paywall-guarantee">One-Time Payment · Instant Access</p>
           </>
         ) : (
           <>

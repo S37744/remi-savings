@@ -88,13 +88,13 @@ export default function SavingsReport({ selected }) {
 
       {tips.length === 0 ? (
         <div className="no-tips">
-          <p>✅ Your current streaming setup looks pretty optimized! No major savings found.</p>
+          <p>✅ Your Current Streaming Setup Looks Pretty Optimized! No Major Savings Found.</p>
         </div>
       ) : (
         <>
           {totalMonthlySavings > 0 && (
             <div className="savings-banner">
-              You could save up to <strong>${totalMonthlySavings.toFixed(2)}/mo</strong> · <strong>${(totalMonthlySavings * 12).toFixed(2)}/year</strong> with these changes
+              You Could Save Up to <strong>${totalMonthlySavings.toFixed(2)}/mo</strong> · <strong>${(totalMonthlySavings * 12).toFixed(2)}/year</strong> With These Changes
             </div>
           )}
 
@@ -119,7 +119,7 @@ export default function SavingsReport({ selected }) {
       )}
 
       <div className="share-prompt">
-        <p>💬 Know someone paying too much for streaming?</p>
+        <p>💬 Know Someone Paying Too Much for Streaming?</p>
         <button
           className="btn-share"
           onClick={() => {

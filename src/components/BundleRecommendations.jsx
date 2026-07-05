@@ -11,7 +11,7 @@ export default function BundleRecommendations({ selected }) {
   return (
     <section className="bundles">
       <h3 className="section-title-sm">💡 Bundle Deals You're Missing</h3>
-      <p className="section-subtitle">You're paying for these separately — bundle them and save.</p>
+      <p className="section-subtitle">You're Paying for These Separately — Bundle Them and Save.</p>
 
       <div className="bundle-cards">
         {applicableBundles.map(bundle => {

@@ -18,7 +18,7 @@ export default function ServiceSelector({ selected, onToggle }) {
   return (
     <section className="service-selector">
       <h2 className="section-title">Select Your Streaming Services</h2>
-      <p className="section-subtitle">Pick every service you currently pay for</p>
+      <p className="section-subtitle">Pick Every Service You Currently Pay For</p>
 
       <div className="service-groups">
         {SERVICE_GROUPS.map(group => {

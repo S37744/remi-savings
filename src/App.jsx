@@ -74,7 +74,7 @@ export default function App() {
             <span className="logo-dot">.</span>
           </div>
           <nav className="nav">
-            <span className="nav-tagline">streaming bill checker</span>
+            <span className="nav-tagline">Streaming Bill Checker</span>
           </nav>
         </div>
       </header>
@@ -85,7 +85,7 @@ export default function App() {
             <div className="hero">
               {justPaid && (
                 <div className="paid-banner">
-                  Payment confirmed! Re-select your services to see your report.
+                  Payment Confirmed! Re-select Your Services to See Your Report.
                 </div>
               )}
               <div className="hero-eyebrow">Honest question —</div>
@@ -141,7 +141,7 @@ export default function App() {
       </main>
 
       <footer className="footer">
-        <p>Built by a real person who was tired of overpaying &nbsp;·&nbsp; Prices last verified {LAST_UPDATED}</p>
+        <p>Built by a Real Person Who Was Tired of Overpaying &nbsp;·&nbsp; Prices Last Verified {LAST_UPDATED}</p>
         <p>© 2025 Remi Savings</p>
       </footer>
     </div>
