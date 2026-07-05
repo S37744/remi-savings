@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { LAST_UPDATED } from './data/services'
+import { LAST_UPDATED, SERVICES } from './data/services'
 import ServiceSelector from './components/ServiceSelector'
 import CostSummary from './components/CostSummary'
 import BundleRecommendations from './components/BundleRecommendations'
@@ -98,7 +98,17 @@ export default function App() {
             {selected.length > 0 && (
               <div className="analyze-bar">
                 <div className="analyze-bar-inner">
-                  <span className="analyze-count">{selected.length} service{selected.length !== 1 ? 's' : ''} selected</span>
+                  <div className="analyze-names">
+                    {selected.map(id => {
+                      const svc = SERVICES.find(s => s.id === id)
+                      if (!svc) return null
+                      return (
+                        <span key={id} className="analyze-tag">
+                          {svc.name}{svc.tier ? ` · ${svc.tier}` : ''}
+                        </span>
+                      )
+                    })}
+                  </div>
                   <button className="btn-primary" onClick={handleAnalyze}>
                     {paid ? 'Show My Savings →' : 'Check My Bill →'}
                   </button>

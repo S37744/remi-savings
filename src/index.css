@@ -192,10 +192,21 @@ body {
   justify-content: space-between;
   gap: 16px;
 }
-.analyze-count {
-  color: var(--text2);
-  font-size: 14px;
+.analyze-names {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  flex: 1;
+}
+.analyze-tag {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 4px 10px;
+  font-size: 12px;
+  color: var(--text);
   font-family: -apple-system, sans-serif;
+  white-space: nowrap;
 }
 
 /* BUTTONS */
