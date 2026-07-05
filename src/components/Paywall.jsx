@@ -8,39 +8,54 @@ const appearance = {
   theme: 'night',
   variables: {
     colorPrimary: '#fb923c',
-    colorBackground: '#272727',
-    colorSurface: '#1e1e1e',
+    colorBackground: '#1e1e1e',
     colorText: '#f0ede8',
-    colorTextSecondary: '#888888',
+    colorTextSecondary: '#aaaaaa',
+    colorTextPlaceholder: '#666666',
     colorDanger: '#f87171',
     borderRadius: '8px',
     fontFamily: '-apple-system, BlinkMacSystemFont, sans-serif',
     fontSizeBase: '15px',
-    spacingUnit: '5px',
   },
   rules: {
     '.Input': {
-      border: '1px solid #2f2f2f',
-      backgroundColor: '#1e1e1e',
+      border: '1px solid #444444',
+      backgroundColor: '#2a2a2a',
       color: '#f0ede8',
+      padding: '12px',
+    },
+    '.Input::placeholder': {
+      color: '#666666',
     },
     '.Input:focus': {
       border: '1px solid #fb923c',
       boxShadow: '0 0 0 2px rgba(251,146,60,0.15)',
+      outline: 'none',
     },
     '.Label': {
-      color: '#888888',
-      fontSize: '12px',
-      textTransform: 'lowercase',
-      letterSpacing: '0.3px',
+      color: '#aaaaaa',
+      fontSize: '13px',
+      marginBottom: '6px',
     },
     '.Tab': {
-      border: '1px solid #2f2f2f',
-      backgroundColor: '#1e1e1e',
+      border: '1px solid #444444',
+      backgroundColor: '#2a2a2a',
+      color: '#aaaaaa',
+    },
+    '.Tab:hover': {
+      color: '#f0ede8',
+      border: '1px solid #666666',
     },
     '.Tab--selected': {
       border: '1px solid #fb923c',
-      backgroundColor: '#272727',
+      backgroundColor: '#1e1e1e',
+      color: '#f0ede8',
+    },
+    '.TabLabel': {
+      color: '#f0ede8',
+    },
+    '.TabIcon': {
+      fill: '#f0ede8',
     },
   },
 }
