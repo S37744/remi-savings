@@ -175,7 +175,7 @@ export default function SavingsReport({ selected }) {
                 {tip.saving !== null && (
                   <div className="tip-saving">
                     <span className="saving-amount">-${tip.saving.toFixed(2)}</span>
-                    <span className="saving-label">per month</span>
+                    <span className="saving-label">Per Month</span>
                   </div>
                 )}
               </div>

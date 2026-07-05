@@ -146,10 +146,10 @@ export default function Paywall({ onPaySuccess }) {
             <h3>Want to See How to Fix It?</h3>
             <p>For $4.99 I'll Show You the Exact Bundle Deals You're Missing and How Much You'd Save Every Single Month. Most People Save $20–40/Month — That's $480 a Year.</p>
             <ul className="paywall-features">
-              <li>✓ Bundle deals you're missing</li>
-              <li>✓ Which tiers are a waste of money</li>
-              <li>✓ How much you save per year</li>
-              <li>✓ What to actually keep vs cancel</li>
+              <li>✓ Bundle Deals You're Missing</li>
+              <li>✓ Which Tiers Are a Waste of Money</li>
+              <li>✓ How Much You Save Per Year</li>
+              <li>✓ What to Actually Keep vs. Cancel</li>
             </ul>
             {fetchError && <div className="checkout-error">{fetchError}</div>}
             <button className="btn-pay" onClick={handleUnlock}>
@@ -166,7 +166,7 @@ export default function Paywall({ onPaySuccess }) {
                 <CheckoutForm onSuccess={onPaySuccess} />
               </Elements>
             ) : (
-              <div className="checkout-loading">loading payment form...</div>
+              <div className="checkout-loading">Loading Payment Form...</div>
             )}
           </>
         )}

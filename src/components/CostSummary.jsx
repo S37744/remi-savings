@@ -27,7 +27,7 @@ export default function CostSummary({ selected }) {
             {overpaying > 0 ? `$${overpaying.toFixed(2)} more` : `$${Math.abs(monthly - avgMonthly).toFixed(2)} less`}
           </div>
           <div className="cost-sublabel">
-            {overpaying > 0 ? 'The average is $61/mo' : 'Nice — average is $61/mo'}
+            {overpaying > 0 ? 'The Average Is $61/mo' : 'Nice — Average Is $61/mo'}
           </div>
         </div>
       </div>
@@ -46,7 +46,7 @@ export default function CostSummary({ selected }) {
           ))}
           <div className="breakdown-item breakdown-total">
             <span className="breakdown-dot" style={{ background: 'transparent' }} />
-            <span className="breakdown-name"><strong>total</strong></span>
+            <span className="breakdown-name"><strong>Total</strong></span>
             <span className="breakdown-price"><strong>${monthly.toFixed(2)}/mo</strong></span>
           </div>
         </div>

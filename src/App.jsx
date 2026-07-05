@@ -88,7 +88,7 @@ export default function App() {
                   Payment Confirmed! Re-select Your Services to See Your Report.
                 </div>
               )}
-              <div className="hero-eyebrow">Honest question —</div>
+              <div className="hero-eyebrow">Honest Question —</div>
               <h1>Do You Actually Know What You're Paying for Streaming?</h1>
               <p>I built this after realizing I was paying <strong>$94/month</strong> across 6 services and watching maybe 2 of them. Pick yours below.</p>
             </div>
