@@ -80,10 +80,13 @@ function getTips(selected) {
 
   // Apple TV+ tip
   if (has('apple-tv')) {
+    const hasNetflixOrMax = hasAny('netflix-ads', 'netflix-standard', 'netflix-premium', 'max-ads', 'max-ad-free', 'max-ultimate')
     tips.push({
       icon: '🍎',
-      title: 'Apple TV+ May Already Be Free for You',
-      detail: 'Apple gives 3 months of Apple TV+ free with any new iPhone, iPad, Mac, or Apple TV purchase. If you bought an Apple device in the last few months and haven\'t claimed it, check apple.com/tv-app/offer — you could be paying for something you already have for free.',
+      title: 'Apple TV+ Has No Library — Netflix and Max Have the Same Shows',
+      detail: hasNetflixOrMax
+        ? 'Apple TV+ is only a handful of originals — no movies, no library, no older shows from other networks. The prestige dramas on Apple TV+ (Severance, Ted Lasso, The Morning Show) are the same type of content you already get on Netflix and Max, which have thousands more options. When you finish the one show you\'re watching on Apple TV+, cancel it and stay on the services you already pay for.'
+        : 'Apple TV+ has no library — it\'s only original shows, nothing else. No movies, no older series, no content from other networks. When you finish a show, cancel immediately and resubscribe only when a specific new show comes out. You could go months without needing it and save $12.99 every month you\'re not actively watching something.',
       saving: 12.99,
     })
   }
@@ -112,8 +115,8 @@ function getTips(selected) {
   if (hasAny('peacock-select', 'peacock-ads', 'peacock-premium') && hasAny('paramount-ads', 'paramount-premium')) {
     tips.push({
       icon: '📡',
-      title: 'Peacock and Paramount+ Have Similar Content — Pick One',
-      detail: 'Both Peacock (NBC/Universal) and Paramount+ (CBS/Showtime) are mid-tier services with similar price points and overlapping content like reality TV, procedural dramas, and live sports. Unless you have a specific show you\'re watching on each, consider dropping one and saving $8-14/mo.',
+      title: 'Peacock and Paramount+ Are the Same Service With Different Logos',
+      detail: 'Peacock is NBC and Universal — Law & Order, Bravo reality shows, some sports. Paramount+ is CBS and Showtime — NCIS, Yellowstone, procedural dramas. Both are mid-tier services built around the exact same type of content: crime shows, reality TV, and live sports with partial coverage. You don\'t need both. Pick the one where you have a show actively running and drop the other — everything on the one you cancel is basically already covered by the one you keep.',
       saving: null,
     })
   }
