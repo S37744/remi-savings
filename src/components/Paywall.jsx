@@ -99,7 +99,7 @@ function CheckoutForm({ onSuccess }) {
       <PaymentElement />
       {error && <div className="checkout-error">{error}</div>}
       <button className="btn-pay" type="submit" disabled={!stripe || loading}>
-        {loading ? 'Processing Payment...' : 'Unlock My Savings — $4.99'}
+        {loading ? 'Processing Payment...' : 'Unlock My Savings — $1.34'}
       </button>
       <p className="paywall-guarantee">One-Time Payment · Instant Access</p>
     </form>
@@ -144,7 +144,7 @@ export default function Paywall({ onPaySuccess }) {
           <>
             <div className="paywall-lock">🔒</div>
             <h3>Want to See How to Fix It?</h3>
-            <p>For $4.99 I'll Show You the Exact Bundle Deals You're Missing and How Much You'd Save Every Single Month. Most People Save $20–40/Month — That's $480 a Year.</p>
+            <p>For $1.34 I'll Show You the Exact Bundle Deals You're Missing and How Much You'd Save Every Single Month. Most People Save $20–40/Month — That's $480 a Year.</p>
             <ul className="paywall-features">
               <li>✓ Bundle Deals You're Missing</li>
               <li>✓ Which Tiers Are a Waste of Money</li>
@@ -153,14 +153,14 @@ export default function Paywall({ onPaySuccess }) {
             </ul>
             {fetchError && <div className="checkout-error">{fetchError}</div>}
             <button className="btn-pay" onClick={handleUnlock}>
-              Show Me How to Save — $4.99
+              Show Me How to Save — $1.34
             </button>
             <p className="paywall-guarantee">One-Time Payment · Instant Access</p>
           </>
         ) : (
           <>
             <h3>Enter Your Payment Details</h3>
-            <p className="paywall-sub">Secure Payment · $4.99 One-Time</p>
+            <p className="paywall-sub">Secure Payment · $1.34 One-Time</p>
             {clientSecret ? (
               <Elements stripe={stripePromise} options={{ clientSecret, appearance, layout: { type: 'accordion', defaultCollapsed: false } }}>
                 <CheckoutForm onSuccess={onPaySuccess} />
