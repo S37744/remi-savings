@@ -128,7 +128,7 @@ export default function Paywall({ onPaySuccess }) {
     setShowForm(true)
     setFetchError(null)
     try {
-      const res = await fetch('/.netlify/functions/create-payment-intent', {
+      const res = await fetch('/api/create-payment-intent', {
         method: 'POST',
       })
       const data = await res.json()
