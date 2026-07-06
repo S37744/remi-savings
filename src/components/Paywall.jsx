@@ -106,10 +106,23 @@ function CheckoutForm({ onSuccess }) {
   )
 }
 
+const OWNER_CODE = 'REMIOWNER'
+
 export default function Paywall({ onPaySuccess }) {
   const [clientSecret, setClientSecret] = useState(null)
   const [showForm, setShowForm] = useState(false)
   const [fetchError, setFetchError] = useState(null)
+  const [showCodeInput, setShowCodeInput] = useState(false)
+  const [codeInput, setCodeInput] = useState('')
+  const [codeError, setCodeError] = useState(null)
+
+  function handleCodeSubmit() {
+    if (codeInput.trim().toUpperCase() === OWNER_CODE) {
+      onPaySuccess()
+    } else {
+      setCodeError('Invalid code.')
+    }
+  }
 
   async function handleUnlock() {
     setShowForm(true)
@@ -156,6 +169,26 @@ export default function Paywall({ onPaySuccess }) {
               Show Me How to Save — $1.34
             </button>
             <p className="paywall-guarantee">One-Time Payment · Instant Access</p>
+            <div className="access-code-section">
+              {!showCodeInput ? (
+                <button className="btn-access-code" onClick={() => setShowCodeInput(true)}>
+                  Have an Access Code?
+                </button>
+              ) : (
+                <div className="access-code-form">
+                  <input
+                    className="access-code-input"
+                    type="text"
+                    placeholder="Enter code"
+                    value={codeInput}
+                    onChange={e => { setCodeInput(e.target.value); setCodeError(null) }}
+                    onKeyDown={e => e.key === 'Enter' && handleCodeSubmit()}
+                  />
+                  <button className="btn-access-code-submit" onClick={handleCodeSubmit}>Apply</button>
+                  {codeError && <div className="checkout-error">{codeError}</div>}
+                </div>
+              )}
+            </div>
           </>
         ) : (
           <>
