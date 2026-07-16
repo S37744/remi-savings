@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { loadStripe } from '@stripe/stripe-js'
 import { Elements, PaymentElement, useStripe, useElements } from '@stripe/react-stripe-js'
 
@@ -99,30 +99,17 @@ function CheckoutForm({ onSuccess }) {
       <PaymentElement />
       {error && <div className="checkout-error">{error}</div>}
       <button className="btn-pay" type="submit" disabled={!stripe || loading}>
-        {loading ? 'Processing Payment...' : 'Unlock My Savings — $1.34'}
+        {loading ? 'Processing Payment...' : 'Unlock My Savings — $0.99'}
       </button>
       <p className="paywall-guarantee">One-Time Payment · Instant Access</p>
     </form>
   )
 }
 
-const OWNER_CODE = 'REMIOWNER'
-
 export default function Paywall({ onPaySuccess }) {
   const [clientSecret, setClientSecret] = useState(null)
   const [showForm, setShowForm] = useState(false)
   const [fetchError, setFetchError] = useState(null)
-  const [showCodeInput, setShowCodeInput] = useState(false)
-  const [codeInput, setCodeInput] = useState('')
-  const [codeError, setCodeError] = useState(null)
-
-  function handleCodeSubmit() {
-    if (codeInput.trim().toUpperCase() === OWNER_CODE) {
-      onPaySuccess()
-    } else {
-      setCodeError('Invalid code.')
-    }
-  }
 
   async function handleUnlock() {
     setShowForm(true)
@@ -157,7 +144,7 @@ export default function Paywall({ onPaySuccess }) {
           <>
             <div className="paywall-lock">🔒</div>
             <h3>Want to See How to Fix It?</h3>
-            <p>For $1.34 I'll Show You the Exact Bundle Deals You're Missing and How Much You'd Save Every Single Month. Most People Save $20–40/Month — That's $480 a Year.</p>
+            <p>For $0.99 I'll Show You the Exact Bundle Deals You're Missing and How Much You'd Save Every Single Month. Most People Save $20–40/Month — That's $480 a Year.</p>
             <ul className="paywall-features">
               <li>✓ Bundle Deals You're Missing</li>
               <li>✓ Which Tiers Are a Waste of Money</li>
@@ -166,34 +153,14 @@ export default function Paywall({ onPaySuccess }) {
             </ul>
             {fetchError && <div className="checkout-error">{fetchError}</div>}
             <button className="btn-pay" onClick={handleUnlock}>
-              Show Me How to Save — $1.34
+              Show Me How to Save — $0.99
             </button>
             <p className="paywall-guarantee">One-Time Payment · Instant Access</p>
-            <div className="access-code-section">
-              {!showCodeInput ? (
-                <button className="btn-access-code" onClick={() => setShowCodeInput(true)}>
-                  Have an Access Code?
-                </button>
-              ) : (
-                <div className="access-code-form">
-                  <input
-                    className="access-code-input"
-                    type="text"
-                    placeholder="Enter code"
-                    value={codeInput}
-                    onChange={e => { setCodeInput(e.target.value); setCodeError(null) }}
-                    onKeyDown={e => e.key === 'Enter' && handleCodeSubmit()}
-                  />
-                  <button className="btn-access-code-submit" onClick={handleCodeSubmit}>Apply</button>
-                  {codeError && <div className="checkout-error">{codeError}</div>}
-                </div>
-              )}
-            </div>
           </>
         ) : (
           <>
             <h3>Enter Your Payment Details</h3>
-            <p className="paywall-sub">Secure Payment · $1.34 One-Time</p>
+            <p className="paywall-sub">Secure Payment · $0.99 One-Time</p>
             {clientSecret ? (
               <Elements stripe={stripePromise} options={{ clientSecret, appearance, layout: { type: 'accordion', defaultCollapsed: false } }}>
                 <CheckoutForm onSuccess={onPaySuccess} />
